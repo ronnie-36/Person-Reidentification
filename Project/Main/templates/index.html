@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML PROJECT</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="..\static\css\style.css">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round" rel="stylesheet">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+  
+   <h1 style="color: yellow;">Person Reidentification</h1>
+   <h1 style="color: white;">Choose the Method You want to proceed with-</h1>
+   <div class="text-center">
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#myModal" class="trigger-btn" data-toggle="modal">Video and Image</a>
+  </div>
+  <div class="text-center">
+    <!-- Button HTML (to Trigger Modal) -->
+    <a href="#myModal1" class="trigger-btn" data-toggle="modal">Two Videos</a>
+  </div>
+  <!-- Modal HTML -->
+  <div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <form action="/reid1" method="get">
+          <div class="modal-header">				
+            <h4 class="modal-title">Video and Image</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">				
+            <div class="form-group">
+              <label for="imageUpload" class="upload-label">
+                Insert Video(Reference) Path
+            </label>
+            <input type="text" name="file1" id="imageUpload">
+            </div>
+            <div class="form-group">
+              <label for="imageUpload" class="upload-label">
+                Insert Image(Query) Path
+            </label>
+            <input type="text" name="file2" id="imageUpload" >
+    
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-primary pull-right" value="SUBMIT">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>     
+  <div id="myModal1" class="modal fade">
+    <div class="modal-dialog modal-login">
+      <div class="modal-content">
+        <form action="/reid2" method="get">
+          <div class="modal-header">				
+            <h4 class="modal-title">Two Videos</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+          <div class="modal-body">				
+            <div class="form-group">
+              <label for="imageUpload" class="upload-label">
+                Insert Video 1(Reference) Path
+            </label>
+            <input type="text" name="file1" id="imageUpload" >
+            </div>
+            <div class="form-group">
+              <label for="imageUpload" class="upload-label">
+                Insert Video 2(Query) Path
+            </label>
+            <input type="text" name="file2" id="imageUpload" accept=".mp4">
+            </div>
+          </div>
+          <div class="modal-footer">
+            <input type="submit" class="btn btn-primary pull-right" value="SUBMIT">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>     
+
+</body>
+</html>
