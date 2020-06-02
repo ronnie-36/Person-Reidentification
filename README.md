@@ -1,5 +1,4 @@
 # Person-Reidentification
-Tensorflow version-1.14.0
 
 1)Download model from this link- https://drive.google.com/file/d/11dklDGtuleZBBQE00EJLACdGkPeZY32K/view?usp=sharing   and put it in the “main” folder
 
