@@ -26,7 +26,7 @@ class Videoreid:
         filename=os.path.splitext(base)[0]
         out=cv2.VideoWriter('../Output_Videos/'+filename+'.webm',fourcc,fps,(frame_width,frame_height))
         videoOn=True
-        past_ppl='../Identity_Gallery/video1'
+        past_ppl='../Identity_Gallery'
         while(videoOn):
             ret, frame=cap.read()
             if(ret == False):
