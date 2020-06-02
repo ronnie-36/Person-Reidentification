@@ -1,8 +1,8 @@
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from nets.mobilenet_v1 import mobilenet_v1
-from tensorflow.contrib import slim
-
+import tf_slim as slim
+tf.disable_v2_behavior()
 
 def endpoints(image, is_training):
     if image.get_shape().ndims != 4:
@@ -10,7 +10,7 @@ def endpoints(image, is_training):
 
     image = tf.divide(image, 255.0)
 
-    with tf.contrib.slim.arg_scope(mobilenet_v1_arg_scope(batch_norm_decay=0.9, weight_decay=0.0)):
+    with slim.arg_scope(mobilenet_v1_arg_scope(batch_norm_decay=0.9, weight_decay=0.0)):
         _, endpoints = mobilenet_v1(image, num_classes=1001, is_training=is_training)
 
     endpoints['model_output'] = endpoints['global_pool'] = tf.reduce_mean(

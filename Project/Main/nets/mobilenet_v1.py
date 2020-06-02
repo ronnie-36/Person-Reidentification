@@ -1,4 +1,4 @@
-# Copyright 2017 The TensorFlow Authors. All Rights Reserved.
+# Copyright 2017 The tensorflow.compat.v1 Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -100,7 +100,7 @@ Total:                                                 1,800,144     106,002,432
 
 """
 
-# Tensorflow mandates these.
+# tensorflow.compat.v1 mandates these.
 from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
@@ -108,10 +108,10 @@ from __future__ import print_function
 from collections import namedtuple
 import functools
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
-slim = tf.contrib.slim
-
+import tf_slim as slim
+tf.disable_v2_behavior()
 # Conv and DepthSepConv namedtuple define layers of the MobileNet architecture
 # Conv defines 3x3 convolution layers
 # DepthSepConv defines 3x3 depthwise convolution followed by 1x1 convolution.

@@ -1,10 +1,10 @@
-import tensorflow as tf 
+import tensorflow.compat.v1 as tf 
 import numpy as np 
 import cv2 
 import nets.resnet_v1_50 as model
 import heads.fc1024 as head
-
-# Tensorflow human re-ID feature descriptor model
+tf.disable_v2_behavior()
+# tensorflow.compat.v1 human re-ID feature descriptor model
 tf.Graph().as_default()
 sess = tf.Session()
 images = tf.zeros([1, 256, 128, 3], dtype=tf.float32)

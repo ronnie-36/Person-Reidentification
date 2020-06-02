@@ -1,4 +1,4 @@
-# Copyright 2016 The TensorFlow Authors. All Rights Reserved.
+# Copyright 2016 The tensorflow.compat.v1 Authors. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -34,7 +34,7 @@ units.
 
 Typical use:
 
-   from tensorflow.contrib.slim.nets import resnet_v1
+   from tensorflow.compat.v1.contrib.slim.nets import resnet_v1
 
 ResNet-101 for image classification into 1000 classes:
 
@@ -56,13 +56,13 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import print_function
 
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 
 from nets import resnet_utils
-
-
+import tf_slim as slim
+tf.disable_v2_behavior()
 resnet_arg_scope = resnet_utils.resnet_arg_scope
-slim = tf.contrib.slim
+
 
 
 @slim.add_arg_scope

@@ -1,9 +1,10 @@
-import tensorflow as tf 
+import tensorflow.compat.v1 as tf 
 import numpy as np 
 import cv2 
 import api
 import os
 from datetime import datetime
+tf.disable_v2_behavior()
 class Videoreid:
     past_ppl_vector= []
   
